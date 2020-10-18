@@ -1,0 +1,526 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link href='https://fonts.googleapis.com/css?family=Poppins' rel='stylesheet'>
+    <title>Document</title>
+    <style>
+
+        body{
+            margin:0px;
+        }
+        #wrapper{
+            color:white;
+            font-family: 'Poppins';
+            width:100%;
+            margin:0 auto;
+            overflow: hidden;
+        }
+        #header{
+            width:100% auto;
+        }
+        #main{
+            margin: 0px;
+            padding:0px;
+            width:100%;
+            height: fit-content;
+        }
+        #menu{
+            display:flex;
+        }
+        #main-banner{
+            width: 100%;
+            height:471px;
+            background:
+        /* top, transparent black, faked with gradient */
+        linear-gradient(
+        rgba(0, 0, 0, 0.7), 
+        rgba(0, 0, 0, 0.7)
+        ),
+        /* bottom, image */
+        url(img/banner.jpg);
+            display:flex;
+            flex-direction: column;
+            align-items:center;
+            justify-content:center;
+            text-align: center;
+        }
+        #main-content{
+            width: 100%;
+            height: fit-content;
+        }
+        #footer{
+            display: flex;
+            justify-content: space-around;
+            width: 100%;
+            height:fit-content;
+            text-align: center;
+            background-color: #75b325;
+            padding-top: 10px;
+            padding-bottom: 1px;
+        }
+        ul{
+            list-style: none;
+        }
+        #header-top{
+            display: flex;
+            justify-content: space-between;
+            width:100%;
+            height:32px;
+            background-color: #75b325;
+            padding: 3px;
+        }
+        @media screen and (min-width:1008px){
+        .header-left{
+            width: 50%;
+            display: flex;
+            justify-content: flex-start;
+            padding-left: 75px;
+            padding-top: 5px;
+        }
+        .header-right{
+            width: 50%;
+            display: flex;
+            justify-content: flex-end;
+            padding-right: 75px;
+            padding-top:5px;
+        }   
+        #header-menu{
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            width:100% auto;
+            height:55px;
+            margin-top: 30px;
+            margin-bottom: 30px;
+            padding-left: 10px;
+            padding-right:10px;
+        }
+        .menu-items{
+            font-weight:bold;
+            color: #75b325;
+            width:fit-content;
+            margin:20px;
+        }
+        .menu-items:first-child{
+            color: white;
+            background-color: #75b325;
+            width:60px;
+            height:fit-content;
+            text-align: center;
+            border-radius: 3px;
+        }
+        h1{
+            font-size: 45px;
+            font-weight: 700;
+            margin-bottom: 0px;
+            text-align: center;
+        }
+        h2{
+            text-align: center;
+            font-size: 34px;
+            color: rgb(58, 58, 58);
+            padding-top:0px;
+            margin-top: 0px;
+        }
+        h3{
+            padding-bottom:0px;
+            margin-bottom:2px;
+            text-align: center;
+            color:#75b325 ;
+        }
+        #main-top{
+            width:100%;
+            text-align: center;
+            margin-top: 60px;
+            margin-bottom: 60px;
+        }
+        #main-bottom{
+            display:flex;
+            padding-bottom: 70px;
+        }
+        .bottom-left{
+            padding-left:70px;
+            padding-right: 70px;
+            width:50%;
+        }
+        #bottom-right{
+            width:50%;
+            text-align: center;
+        }
+        #logo{
+            padding: 5 2;;
+        }
+        .icon-footer{
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            border-color:white;
+             border-style: solid;
+            width:100px;
+            height: 100px;
+        }
+        .footer-item{
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            width: 33%;
+            height:100%;
+            flex-direction: column;
+            padding-bottom:15px;
+            padding-top: 30px;
+        }
+        .icon-footer{
+            border-color: rgb(190, 190, 190);
+            border-style: solid;
+            padding:7px;
+            margin-bottom: 12px;
+        }
+        .footer-item:not(:last-child) {
+            border-right: dotted;
+            border-color: rgb(190, 190, 190);
+}
+        #left-user{
+            width: fit-content;
+            margin-right: 20px;
+            font-size:14px;
+        }
+        #left-order{
+            width: fit-content;
+            font-size:14px;
+        }
+        #right-search{
+            height:20px;
+            font-size: 12px;
+            border: rgb(216, 216, 216) solid 1px;
+            border-radius: 3px;
+            width: 24%;
+            display: flex;
+            justify-content: space-between;
+            padding-right:5px;
+            padding-left: 5px;
+            padding-top: 4px;
+            margin-right: 20px; 
+        }
+        #right-phone{
+            width: fit-content;
+            margin-right: 20px;
+            font-size:14px;
+            padding-top: 3px;
+        }
+        #right-icon{
+            padding-bottom: 2px;
+            width: fit-content;
+        }
+        .btn{
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            background-color: #75b325;
+            border-radius: 3px;
+            font-weight: bold;
+            margin-right: 30px;
+        }
+        .bottom-btn{
+            display: flex;
+            justify-content: flex-start;
+            width: 100%;
+            height:15%;
+        }
+        }
+        @media (max-width: 719px){
+            #wrapper { display: none; };
+        }
+        @media screen and (min-width: 720px) and (max-width: 1007px){
+        .header-left{
+            width: 50%;
+            display: flex;
+            justify-content: flex-start;
+            padding-left: 5px;
+            padding-top: 5px;
+        }
+        .header-right{
+            width: 50%;
+            display: flex;
+            justify-content: flex-end;
+            padding-right: 5px;
+            padding-top:5px;
+        }
+        
+        #header-menu{
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            width:100% auto;
+            height:55px;
+            margin-top: 30px;
+            margin-bottom: 30px;
+            padding-left: 10px;
+            padding-right:10px;
+        }
+        .menu-items{
+            font-size:12px;
+            font-weight:bold;
+            color: #75b325;
+            width:fit-content;
+            margin:10px;
+        }
+        .menu-items:first-child{
+            color: white;
+            background-color: #75b325;
+            width:45px;
+            height:fit-content;
+            text-align: center;
+            border-radius: 3px;
+        }
+        h1{
+            font-size: 38px;
+            font-weight: 700;
+            margin-bottom: 0px;
+            text-align: center;
+        }
+        h2{
+            text-align: center;
+            font-size: 30px;
+            color: rgb(58, 58, 58);
+            padding-top:0px;
+            margin-top: 0px;
+        }
+        h3{
+            padding-bottom:0px;
+            margin-bottom:2px;
+            text-align: center;
+            color:#75b325 ;
+        }
+        #main-top{
+            width:100%;
+            text-align: center;
+            margin-top: 30px;
+            margin-bottom: 0px;
+        }
+        #main-bottom{
+            padding-bottom: 70px;
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            align-items: center;
+        }
+        .bottom-left{
+            display: flex;
+            flex-direction: column;
+            padding-left:70px;
+            padding-right: 70px;
+            width:80%;
+            margin-bottom:20px;
+        }
+        #bottom-right{
+            width:80%;
+            text-align: center;
+        }
+        #logo{
+            padding: 1 1;
+        }
+        .icon-footer{
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            border-color:white;
+             border-style: solid;
+            width:100px;
+            height: 100px;
+        }
+        .footer-item{
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            width: 33%;
+            height:100%;
+            flex-direction: column;
+            padding-bottom:15px;
+            padding-top: 30px;
+        }
+        .icon-footer{
+            border-color: rgb(190, 190, 190);
+            border-style: solid;
+            padding:7px;
+            margin-bottom: 12px;
+        }
+        .footer-item:not(:last-child) {
+            border-right: dotted;
+            border-color: rgb(190, 190, 190);
+}
+        #left-user{
+            width: fit-content;
+            margin-right: 20px;
+            font-size:14px;
+        }
+        #left-order{
+            width: fit-content;
+            font-size:14px;
+        }
+        #right-search{
+            height:20px;
+            font-size: 12px;
+            border: rgb(216, 216, 216) solid 1px;
+            border-radius: 3px;
+            width: 24%;
+            display: flex;
+            justify-content: space-between;
+            padding-right:5px;
+            padding-left: 5px;
+            padding-top: 4px;
+            margin-right: 20px; 
+        }
+        #right-phone{
+            width: fit-content;
+            margin-right: 20px;
+            font-size:14px;
+            padding-top: 3px;
+        }
+        #right-icon{
+            padding-bottom: 2px;
+            width: fit-content;
+        }
+        .btn{
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            background-color: #75b325;
+            border-radius: 3px;
+            font-weight: bold;
+            margin-right: 30px;
+        }
+        .bottom-btn{
+            display: flex;
+            justify-content: center;
+            width: 100%;
+            height:15%;
+
+        }
+        }
+    </style>
+</head>
+<body>
+    <div id="wrapper">
+        <div id="header">
+            <div id=header-top>
+               <div class="header-left">
+                    <div id="left-user">
+                        <img src="img/icon-user.png" width="20px"  alt="">
+                        My accout
+                    </div>
+                    <div id="left-order">
+                        <img src="img/icon-order.png" width="20px"  alt="">
+                        Order tracking
+                    </div>
+               </div> 
+               <div class="header-right">
+                   <div id="right-search">
+                       Search...
+                        <img src="img/icon-search.png" width="20px" height="20px" alt="">
+                   </div>
+                   <div id="right-phone">
+                       <img src="img/icon-phone.png" width="14px" alt="">
+                       011 322 44 56
+                   </div>
+                   <div id="right-icon">
+                        <img src="img/icon-facebook.png" width="28px" alt="">
+                        <img src="img/icon-twitter.png" width="28px" alt="">
+                        <img src="img/icon-earth.png" width="28px" alt="">
+                   </div>
+               </div>    
+            </div>  
+            <div id="header-menu">
+                <div>
+                <div id="logo">
+                    <img src="img/logo-7weed.png" alt="">
+                </div>
+                </div>
+                <ul id="menu">
+                    <li class="menu-items">HOME</li>
+                    <li class="menu-items">ABOUT US</li>
+                    <li class="menu-items">VISIT DISPENSARY</li>
+                    <li class="menu-items">BUY ONLINE</li>
+                    <li class="menu-items">NEWS</li>
+                    <li class="menu-items">CONTACT</li>
+                    <li class="menu-items">CART</li>
+                </ul>
+            </div>
+        </div>
+        <div id="main">
+                <div id="main-banner">
+                    <h1>VISIT SEVEN WEED DISPENSARY <br> IN LOS ANGELES, CALIFORNIA</h1>
+                    <p style="font-size:24px;font-weight: bold;text-align: center;">We offer  a wide selection of premium cannabis products.<br>
+                        Come by for a  visit to one of our brand stores!
+                    </p>
+                    <p class="btn" style="width: 200px; height: 50px;font-size: 22px;">
+                        Getdirection
+                    </p>
+                </div>
+                <div id="main-content">
+                    <div id="main-top">
+                        <h3>
+                            State licensed recreational & medical cannabis dispensary
+                        </h3>
+                        <h2>
+                            Welcome to Seven Weed – one of the oldest & most trusted cannabis dispensaries in Los Angeles, California
+                        </h2>
+                    </div>
+                </div>
+                <div id="main-bottom">
+                    <div class="bottom-left">
+                        <div>
+                            <p style="color:rgb(39, 39, 39);font-weight:bold;font-size: 18px;">Proin ollicitudin nibh interdum - mollis dolor auctor dolor pretium, nec faucibus turpis eleifend</p>
+                            <p style="color:rgb(145, 145, 145)">Duis auctor at lorem ipsum dolor nulla glavriadac – nibh interdum s interdum vel sollicitudin nibhlod.
+                               </p>
+                                <p style="color:rgb(145, 145, 145)">
+                                    Suspendisse auctor volutpat turpis, vel sollicitudin nibh interdum non. Praesent quis tortor et est finibus dignissim quis id leo. Suspendisse tempor consectetur odio!
+                                </p>
+                        </div>
+                       
+                            <div class="bottom-btn">
+                                <div class="btn" style="width: 35%; height: 80%;">
+                                    Visit dispensary 
+                                    <img src="img/icon-home.png" width="25px"  alt="" style="margin-left: 5px;">
+                                </div>
+                                <div class="btn" style="width: 35%; height: 80%;">
+                                    Buy online
+                                    <img src="img/icon-bag.png" width="15px"  alt="" style="margin-left: 5px;">
+                                </div>
+                            </div>
+                    </div>
+                    <div id="bottom-right">
+                        <img src="img/image.jpg" width="92%" alt="">
+                    </div>
+                </div>
+        </div>
+        <div id="footer">
+            <div class="footer-item">
+                <div class="icon-footer">
+                    <img src="img/icon-mess.png" width="70px" alt="">
+                </div>
+                <div style="font-weight: bold;font-size: 17px;">
+                    Get Consultation
+                </div>
+            </div>
+            <div class="footer-item">
+                <div class="icon-footer">
+                    <img src="img/icon-cart.png" width="70px" alt="">
+                </div>
+                <div style="font-weight: bold;font-size: 17px;">
+                    Order Online
+                </div>
+            </div>
+            <div class="footer-item">
+                <div class="icon-footer">
+                    <img src="img/icon-map.png" width="50px" alt="">
+                </div>
+                <div style="font-weight: bold;font-size: 17px;">
+                    Visit Seven Weed
+                </div>
+            </div>
+        </div>
+    </div>
+</body>
+</html>
